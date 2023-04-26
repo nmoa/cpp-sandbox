@@ -8,11 +8,11 @@ find_package(GTest CONFIG REQUIRED)
 enable_testing()
 
 add_executable(test_main
-    AdapterSample.cpp
+    DecoratorSample.cpp
 )
 
 target_compile_options(test_main
-    PUBLIC -g3 -O0 -std=c++03 -Wall # --coverage
+    PUBLIC -g3 -O0 -std=c++17 -Wall # --coverage
 )
 
 target_link_options(test_main

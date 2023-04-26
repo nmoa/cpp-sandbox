@@ -15,7 +15,7 @@ public:
 	std::string getDescription() const {
 		return "Espresso";
 	}
-	double cost() const {
+	double cost() const override {
 		return 1.99;
 	}
 };
@@ -24,10 +24,10 @@ public:
 class CondimentDecorator : public Beverage {
 public:
 	CondimentDecorator(Beverage* beverage) : beverage_(beverage) {}
-	std::string getDescription() const {
+	std::string getDescription() const override {
 		return beverage_->getDescription();
 	}
-	double cost() const {
+	double cost() const override {
 		return beverage_->cost();
 	}
 
@@ -39,10 +39,10 @@ protected:
 class Milk : public CondimentDecorator {
 public:
 	Milk(Beverage* beverage) : CondimentDecorator(beverage) {}
-	std::string getDescription() const {
+	std::string getDescription() const override {
 		return beverage_->getDescription() + ", Milk";
 	}
-	double cost() const {
+	double cost() const override {
 		return beverage_->cost() + 0.10;
 	}
 };
@@ -50,10 +50,10 @@ public:
 class Mocha : public CondimentDecorator {
 public:
 	Mocha(Beverage* beverage) : CondimentDecorator(beverage) {}
-	std::string getDescription() const {
+	std::string getDescription() const override {
 		return beverage_->getDescription() + ", Mocha";
 	}
-	double cost() const {
+	double cost() const override {
 		return beverage_->cost() + 0.20;
 	}
 };
