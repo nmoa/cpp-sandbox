@@ -1,3 +1,74 @@
-/build
-/fakeit.hpp
-.gitconfig
+# User defined
+
+# dotfiles
+.settings/*
+.vscode/*
+.cproject
+.project
+.settings
+.vscode
+.cache/*
+
+# dotfiles exceptions
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/c_cpp_properties.json
+!.vscode/extensions.json
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.bin
+
+
+# CMake
+**/cmake-build-debug
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/install_manifest.txt
+**/CMakeFiles/
+**/CTestTestfile.cmake
+**/*.cbp
+**/CMakeScripts
+**/compile_commands.json
+
+include/divisible/*
+
+## Local 
+.idea/*.xml
+build
+build/**/*
+include/*
+lib/*
+bin/*
+test/test_runner

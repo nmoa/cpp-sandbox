@@ -7,10 +7,10 @@ class FooTest : public testing::TestWithParam<const char*> {
 	// TestWithParam<T>.
 };
 
-class BaseTest : public testing::Test {
+class IBaseTest : public testing::Test {
 protected:
 };
-class BarTest : public BaseTest, public testing::WithParamInterface<const char*> {
+class BarTest : public IBaseTest, public testing::WithParamInterface<const char*> {
 protected:
 };
 
