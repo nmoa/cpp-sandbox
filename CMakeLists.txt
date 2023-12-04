@@ -31,8 +31,7 @@ set(GMOCK_INCLUDE_DIR ${gmock_SOURCE_DIR}/include)
 include_directories(${GTEST_INCLUDE_DIR} ${GMOCK_INCLUDE_DIR})
 
 add_executable(test_main
-
-    default-constructor.cpp
+    src/default-constructor.cpp
 )
 
 target_compile_options(test_main
