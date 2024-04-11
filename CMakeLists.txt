@@ -35,7 +35,7 @@ add_executable(test_main
 )
 
 target_compile_options(test_main
-    PUBLIC -g3 -O0 -std=c++03 -Wall
+    PUBLIC -g3 -O0 -std=c++11 -Wall
 )
 
 target_link_options(test_main

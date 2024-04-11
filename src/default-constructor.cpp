@@ -14,23 +14,25 @@ private:
 
 class COuterClass {
 public:
-  // NG! m_innerをデフォルトコンストラクタで初期化してから、CInnerClass(5)を代入する、という処理になるが、
-  // CInnerClassのデフォルトコンストラクタが定義されていないため no matching function for call to 'CInnerClass::CInnerClass() になる
-  COuterClass() {
-    m_inner = CInnerClass(5);
-  }
-
   void display() const {
-    m_inner.display();
+    for(const auto& inner : m_inners) {
+      inner.display();
+    }
   }
 
 private:
-  CInnerClass m_inner;
+  // C++11以降では以下のようにメンバ変数のデフォルト値を定義できる
+  CInnerClass m_inners[3] = {CInnerClass(1), CInnerClass(2), CInnerClass(3)};
 };
 
 int main() {
-  COuterClass outerObj;
-  outerObj.display();
+  COuterClass outer;
+  outer.display();
+
+  CInnerClass inners[3] = {CInnerClass(1), CInnerClass(2), CInnerClass(3)};
+  for(const auto& inner : inners) {
+    inner.display();
+  }
 
   return 0;
 }
